@@ -1,4 +1,4 @@
-Certainly! Let's break down these SQL aggregation functions and clauses step by step to understand how they work and are commonly used in queries.
+
 
 ### 1. AVG()
 
