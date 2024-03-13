@@ -114,16 +114,16 @@ HAVING AVG(rating::numeric) > 4; -- Assuming rating can be converted to numeric
 ### Corrected Query
 
 ```sql
-SELECT event_id
+SELECT event_id, comment
 FROM reviews
-GROUP BY event_id
-HAVING AVG(CASE rating 
-             WHEN 'poor' THEN 1
-             WHEN 'fair' THEN 2
-             WHEN 'good' THEN 3
-             WHEN 'excellent' THEN 4
-             ELSE NULL
-           END) > 4;
+GROUP BY event_id, comment
+HAVING AVG(CASE rating
+               WHEN 'poor' THEN 1
+               WHEN 'fair' THEN 2
+               WHEN 'good' THEN 3
+               WHEN 'excellent' THEN 4
+               ELSE NULL
+    END) >= 3 ;
 ```
 
 ### Explanation
